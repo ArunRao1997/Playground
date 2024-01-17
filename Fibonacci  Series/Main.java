@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.io.*;
 class Fibonacci extends Thread
 {
@@ -8,7 +9,7 @@ class Fibonacci extends Thread
                int a=0, b=1, c=0;
                BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
                System.out.print("Enter the limit for Fibonacci: ");
-               int n = Integer.parseInt(br.readLine());
+               int n = Integer.parseInt(BoundedLineReader.readLine(br, 5_000_000));
                System.out.println(n);
                if(n <= 0)
                {

@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.util.*;
 import java.io.*;
 import java.lang.*;
@@ -15,10 +16,10 @@ public class Main
             System.out.println("2.delete");
             System.out.println("3.Display");
             System.out.println("4.Exit");
-            int ch = Integer.parseInt(br.readLine());
+            int ch = Integer.parseInt(BoundedLineReader.readLine(br, 5_000_000));
             switch(ch)
             {
-                case 1: String month = br.readLine();
+                case 1: String month = BoundedLineReader.readLine(br, 5_000_000);
                         String[] arr = month.split(",");
                         for(int i = 0;i<arr.length;i++)
                         {
@@ -26,7 +27,7 @@ public class Main
                         }
                         break;
                 case 2: System.out.print("Enter the index value to be deleted:");
-                        int ch1 = Integer.parseInt(br.readLine());
+                        int ch1 = Integer.parseInt(BoundedLineReader.readLine(br, 5_000_000));
                         System.out.println(ch1);
                         al.remove(ch1);
                         break;

@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.util.*;
 import java.io.*;
 import java.lang.*;
@@ -7,7 +8,7 @@ public class Main
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         LinkedHashSet<String> lhs=new LinkedHashSet<String>();
-        String month = br.readLine();
+        String month = BoundedLineReader.readLine(br, 5_000_000);
         String[] arr = month.split(",");
         for(int i = 0;i<arr.length;i++)
         {
@@ -15,12 +16,12 @@ public class Main
         }
         System.out.println(lhs);
         System.out.print("Enter the value to be deleted: ");
-        String n = br.readLine();
+        String n = BoundedLineReader.readLine(br, 5_000_000);
         System.out.println(n);
         lhs.remove(n);
         System.out.println(lhs);
         System.out.print("Enter the value to be added: ");
-        String m = br.readLine();
+        String m = BoundedLineReader.readLine(br, 5_000_000);
         System.out.println(m);
         lhs.add(m);
         System.out.println(lhs);
