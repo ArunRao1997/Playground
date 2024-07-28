@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.util.*;
 import java.io.*;
 import java.lang.*;
@@ -7,7 +8,7 @@ public class Main
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         LinkedList<String> ll = new LinkedList<String>();
-        String month = br.readLine();
+        String month = BoundedLineReader.readLine(br, 5_000_000);
         String[] arr = month.split(",");
         for(int i = 0;i<arr.length;i++)
         {
@@ -16,7 +17,7 @@ public class Main
         System.out.println(ll);
         System.out.println("Size of the linked list: "+ll.size());
         System.out.println("Is LinkedList empty? "+ll.isEmpty());
-                String m1 = br.readLine();
+                String m1 = BoundedLineReader.readLine(br, 5_000_000);
       //System.out.println("Enter the month to find in the given list" +m1 = br.readLine());
 
         System.out.println("Does LinkedList contains "+m1+"?");
