@@ -1,3 +1,4 @@
+import io.github.pixee.security.BoundedLineReader;
 import java.util.*;
 import java.io.*;
 import java.lang.*;
@@ -7,7 +8,7 @@ public class Main
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         LinkedHashSet<String> hs=new LinkedHashSet<String>();
-        String m = br.readLine();
+        String m = BoundedLineReader.readLine(br, 5_000_000);
         String[] arr = m.split(",");
         for(int i = 0;i<arr.length;i++)
         {
